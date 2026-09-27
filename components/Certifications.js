@@ -6,16 +6,16 @@ import { motion } from "framer-motion";
 
 export default function Certifications() {
   const certificates = [
-    "/cert1.jpg",
-    "/cert2.jpg",
-    "/cert3.jpg",
-    "/cert4.jpg",
-    "/cert5.jpg",
-    "/cert6.jpg",
-    "/cert7.jpg",
-    "/cert8.jpg",
-    "/cert9.jpg",
-    "/cert10.jpg",
+    "/cert1.jpeg",
+    "/cert2.jpeg",
+    "/cert3.jpeg",
+    "/cert4.jpeg",
+    "/cert5.jpeg",
+    "/cert6.jpeg",
+    "/cert7.jpeg",
+    "/cert8.jpeg",
+    "/cert9.jpeg",
+    "/cert10.jpeg",
   ];
 
   const scrollRef = useRef(null);

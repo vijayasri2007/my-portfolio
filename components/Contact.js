@@ -26,6 +26,13 @@ export default function Contact() {
       return;
     }
 
+    // Email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setError("⚠ Please enter a valid email address.");
+      return;
+    }
+
     // Simulate success (replace with backend/email API later)
     setSuccess("✅ Thank you! Your message has been sent successfully.");
     setFormData({ name: "", email: "", message: "" });
@@ -40,26 +47,29 @@ export default function Contact() {
       {/* Contact Form */}
       <form
         onSubmit={handleSubmit}
-        className="max-w-lg mx-auto space-y-5 bg-slate-900/60 backdrop-blur-md p-6 rounded-lg shadow-xl"
+        className="max-w-2xl mx-auto space-y-5 bg-slate-900/60 backdrop-blur-md p-6 rounded-lg shadow-xl"
       >
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Your Name"
-          className="w-full p-3 rounded bg-slate-800 text-textlight 
-                     focus:outline-none focus:ring-2 focus:ring-tealaccent"
-        />
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Your Email"
-          className="w-full p-3 rounded bg-slate-800 text-textlight 
-                     focus:outline-none focus:ring-2 focus:ring-tealaccent"
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            className="w-full p-3 rounded bg-slate-800 text-textlight 
+                       focus:outline-none focus:ring-2 focus:ring-tealaccent"
+          />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Your Email"
+            className="w-full p-3 rounded bg-slate-800 text-textlight 
+                       focus:outline-none focus:ring-2 focus:ring-tealaccent"
+          />
+        </div>
+
         <textarea
           name="message"
           value={formData.message}
@@ -69,6 +79,7 @@ export default function Contact() {
           className="w-full p-3 rounded bg-slate-800 text-textlight 
                      focus:outline-none focus:ring-2 focus:ring-tealaccent"
         ></textarea>
+
         <button
           type="submit"
           className="w-full px-6 py-3 bg-tealaccent text-darkbg rounded 

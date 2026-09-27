@@ -27,7 +27,7 @@ export default function Projects() {
         Projects
       </h2>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+      <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
         {projects.map((project, index) => (
           <motion.div
             key={index}

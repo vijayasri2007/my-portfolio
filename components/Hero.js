@@ -18,7 +18,7 @@ export default function Hero() {
       >
         {/* 🔹 Profile Photo */}
         <Image
-          src="/profile.jpg" // replace with your actual profile image
+          src="/profile.jpeg" // ✅ use .jpeg since your file is saved like that
           alt="Vijayasri Sakthivel"
           width={180}
           height={180}
