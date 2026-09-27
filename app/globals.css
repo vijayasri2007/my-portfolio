@@ -1,26 +1,96 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* 🔹 Theme Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0f172a;   /* dark navy */
+  --foreground: #f1f5f9;   /* light text */
+  --accent: #14b8a6;       /* teal accent */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
+    --accent: #0d9488; /* teal shade for light mode */
   }
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scroll effect */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 🔹 Certificates Auto-Scroll Animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* 🔹 Accent Utilities */
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.hover-accent:hover {
+  background-color: #0d9488; /* darker teal hover */
+}
+
+/* 🔹 Navbar Animated Underline */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* 🔹 Hero Background Gradient Animation */
+.hero-bg {
+  background: linear-gradient(-45deg, #0f172a, #14b8a6, #0d9488, #1e293b);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
