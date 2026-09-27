@@ -13,27 +13,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Vijayasri Sakthivel Portfolio",
-  description: "Personal portfolio built with Next.js and Tailwind CSS",
+  title: "Vijayasri Sakthivel | Computer Science Student",
+  description:
+    "Vijayasri Sakthivel's professional portfolio — Computer Science and Engineering student skilled in Java, SQL, Data Structures, Full Stack Development, Cloud Computing and AI.",
+  keywords: [
+    "Vijayasri Sakthivel",
+    "Computer Science Student",
+    "Full Stack Developer",
+    "Java Developer",
+    "React Developer",
+    "SQL",
+    "Data Structures",
+    "Cloud Computing",
+    "AI",
+    "Portfolio",
+  ],
+  authors: [
+    {
+      name: "Vijayasri Sakthivel",
+    },
+  ],
+  creator: "Vijayasri Sakthivel",
+  openGraph: {
+    title: "Vijayasri Sakthivel | Portfolio",
+    description:
+      "Computer Science and Engineering student passionate about software development, problem solving and emerging technologies.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] font-sans">
-        {/* 🔹 Navbar */}
+      <body>
+        {/* Premium Fixed Navigation */}
         <Navbar />
 
-        {/* 🔹 Page Content */}
-        <main className="flex-1 mt-20">{children}</main>
-
-        {/* 🔹 Footer */}
-        <footer className="bg-slate-900 text-center py-4 text-[var(--accent)]">
-          © {new Date().getFullYear()} Vijayasri Sakthivel — All Rights Reserved
-        </footer>
+        {/* Main Portfolio */}
+        <main>{children}</main>
       </body>
     </html>
   );

@@ -2,35 +2,42 @@
 
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Certifications from "../components/Certifications";
-import Projects from "../components/Projects";
 import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import Certifications from "../components/Certifications";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import ScrollProgress from "../components/ScrollProgress";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center min-h-screen bg-darkbg text-textlight">
-      {/* Hero Section */}
-      <Hero />
+    <>
+      {/* Scroll Progress */}
+      <ScrollProgress />
 
-      {/* About Section */}
-      <About />
+      {/* Main Portfolio */}
+      <main>
+        {/* Hero */}
+        <Hero />
 
-      {/* Certifications Section */}
-      <Certifications />
+        {/* About */}
+        <About />
 
-      {/* Projects Section */}
-      <Projects />
+        {/* Skills */}
+        <Skills />
 
-      {/* Skills Section */}
-      <Skills />
+        {/* Projects */}
+        <Projects />
 
-      {/* Contact Section */}
-      <Contact />
+        {/* Certifications */}
+        <Certifications />
+
+        {/* Contact */}
+        <Contact />
+      </main>
 
       {/* Footer */}
       <Footer />
-    </main>
+    </>
   );
 }
